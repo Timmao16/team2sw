@@ -1,5 +1,5 @@
 package org.firstinspires.ftc.teamcode.testopmodes;
-//dfjskla;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -30,6 +30,36 @@ public class BriansRobotTest extends LinearOpMode {
         fLM.setPower(-speed);
         fRM.setPower(-speed);
         bLM.setPower(speed);
+        bRM.setPower(speed);
+    }
+    public void backwards(float speed){
+        fLM.setPower(speed);
+        fRM.setPower(speed);
+        bLM.setPower(-speed);
+        bRM.setPower(-speed);
+    }
+     public void strafeRight(float speed){
+        fLM.setPower(-speed);
+        fRM.setPower(speed);
+        bLM.setPower(-speed);
+        bRM.setPower(speed);
+    }
+    public void strafeLeft(float speed){
+        fLM.setPower(speed);
+        fRM.setPower(-speed);
+        bLM.setPower(speed);
+        bRM.setPower(-speed);
+    }
+     public void turnLeft(float speed){
+        fLM.setPower(speed);
+        fRM.setPower(-speed);
+        bLM.setPower(speed);
+        bRM.setPower(-speed);
+    }
+    public void turnRight(float speed){
+        fLM.setPower(-speed);
+        fRM.setPower(speed);
+        bLM.setPower(-speed);
         bRM.setPower(speed);
     }
 }
