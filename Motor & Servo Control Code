@@ -1,0 +1,34 @@
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.Servo;
+
+@TeleOp(name="Servo Example")
+public class ServoExample extends OpMode {
+
+    private Servo myServo;
+
+
+    @Override
+    public void init() {
+
+        myServo = hardwareMap.get(Servo.class, "servoName"); // Change "servoName" to your servo's configuration name
+
+        myServo.setPosition(0.5); // Set the servo to its mid position
+    }
+
+    @Override
+    public void loop() {
+
+        if(gamepad1.a) {
+
+            myServo.setPosition(0.0);
+        }
+        else if(gamepad1.b) {
+ 
+            myServo.setPosition(1.0);
+        }
+        
+        telemetry.addData("Servo Position", myServo.getPosition());
+        telemetry.update();
+    }
+}
